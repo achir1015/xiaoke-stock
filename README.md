@@ -1,4 +1,5 @@
 # 小柯股市助手（XiaoKeStock）
+<img width="562" height="945" alt="image" src="https://github.com/user-attachments/assets/d0ac378b-7545-497f-810f-48142c354447" />
 
 ## 📲 下載安裝（Android 7.0 以上）
 
