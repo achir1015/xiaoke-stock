@@ -16,6 +16,24 @@
 
 Android 看盤 App，功能參考「三竹股市」。先用 REA 分析三竹 APK 的功能架構（見 [docs/REA_ANALYSIS.md](docs/REA_ANALYSIS.md)），程式再全部重新寫過；只用公開資料，不連三竹的伺服器，也沒有用到三竹的程式碼或素材。
 
+## 📱 iPhone 版（ios/）
+
+用 SwiftUI 寫的 iPhone 版，功能和 Android 版相同：自選、大盤、個股走勢與 K 線（KD、MACD）、排行、選股、新聞、到價提醒、桌面小工具、小柯唸報價。
+
+目前沒有上架 App Store，要在 Mac 上用 Xcode 安裝（需要 Xcode 15 以上、iOS 17 以上）：
+
+```bash
+brew install xcodegen
+cd ios && xcodegen generate && open XiaoKeStock.xcodeproj
+```
+
+在 Xcode 選擇自己的 iPhone，按 ▶ 執行。如果用的是免費 Apple ID，**7 天後簽章就會過期**，到時要在 Mac 上重新按一次 ▶。換別的 Apple 帳號時，要修改 `ios/project.yml` 裡的 `DEVELOPMENT_TEAM`。
+
+iPhone 版和 Android 版的差異：
+- 到價提醒：App 開著時每分鐘檢查；在背景時由 iOS 決定什麼時候檢查，不保證準時。
+- 檢查更新：iOS 不能自己安裝新版，有新版時只會開啟下載頁面。
+
+
 ## 功能
 - **自選**：最多 10 個群組、每組 60 檔，可以放台股上市、上櫃、ETF，也可以放美股（例如 NVDA、AAPL）；自動更新，長按可以排序或刪除
 - **🤖 小柯唸自選**：用系統 TTS 念出自選股的報價

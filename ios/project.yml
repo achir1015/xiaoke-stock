@@ -66,3 +66,13 @@ targets:
         CFBundleDisplayName: 小柯股市
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
+schemes:
+  XiaoKeStock:
+    build:
+      targets:
+        XiaoKeStock: all
+        XiaoKeStockWidget: all
+    run:
+      config: Debug
+    archive:
+      config: Release
