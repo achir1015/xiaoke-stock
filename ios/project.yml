@@ -1,0 +1,68 @@
+name: XiaoKeStock
+options:
+  bundleIdPrefix: com.achir
+  deploymentTarget:
+    iOS: "17.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  XiaoKeStock:
+    type: application
+    platform: iOS
+    sources:
+      - path: XiaoKeStock
+    dependencies:
+      - target: XiaoKeStockWidget
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.achir.xiaokestock
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: 7BN6XJ59KP   # Yu-Juh Wu (Personal Team)；換帳號就改這裡
+        GENERATE_INFOPLIST_FILE: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_ENTITLEMENTS: XiaoKeStock/XiaoKeStock.entitlements
+    info:
+      path: XiaoKeStock/Info.plist
+      properties:
+        CFBundleDisplayName: 小柯股市
+        CFBundleDevelopmentRegion: zh_TW
+        UILaunchScreen:
+          UIColorName: ""
+        UIUserInterfaceStyle: Dark
+        CFBundleURLTypes:          # 小工具點個股：xiaokestock://stock/2330
+          - CFBundleURLName: com.achir.xiaokestock
+            CFBundleURLSchemes:
+              - xiaokestock
+        UIBackgroundModes:
+          - fetch
+        BGTaskSchedulerPermittedIdentifiers:
+          - com.achir.xiaokestock.alerts
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+  XiaoKeStockWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: Widget
+      - XiaoKeStock/Theme.swift
+      - XiaoKeStock/Data.swift
+      - XiaoKeStock/Market.swift
+      - XiaoKeStock/Store.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.achir.xiaokestock.widget
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: 7BN6XJ59KP
+        CODE_SIGN_ENTITLEMENTS: Widget/Widget.entitlements
+        GENERATE_INFOPLIST_FILE: NO
+    info:
+      path: Widget/Info.plist
+      properties:
+        CFBundleDisplayName: 小柯股市
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
