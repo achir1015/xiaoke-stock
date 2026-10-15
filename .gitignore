@@ -11,3 +11,6 @@ local.properties
 ios/build/
 ios/*.xcodeproj/
 DerivedData/
+
+# xcodegen 產生的檔案
+ios/*/Info.plist

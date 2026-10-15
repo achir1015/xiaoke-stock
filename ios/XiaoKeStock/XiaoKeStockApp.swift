@@ -23,6 +23,10 @@ struct XiaoKeStockApp: App {
                 }
         }
         .onChange(of: phase) { _, p in
+            if p == .active {   // 小工具按 ▶ 可能換過群組
+                let g = min(Store.defaults.integer(forKey: "group"), store.groups.count - 1)
+                if g != store.current { store.current = g }
+            }
             if p == .background {
                 AlertChecker.schedule()
                 WidgetCenter.shared.reloadAllTimelines()

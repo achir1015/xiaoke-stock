@@ -20,18 +20,45 @@ Android 看盤 App，功能參考「三竹股市」。先用 REA 分析三竹 AP
 
 用 SwiftUI 寫的 iPhone 版，功能和 Android 版相同：自選、大盤、個股走勢與 K 線（KD、MACD）、排行、選股、新聞、到價提醒、桌面小工具、小柯唸報價。
 
-目前沒有上架 App Store，要在 Mac 上用 Xcode 安裝（需要 Xcode 15 以上、iOS 17 以上）：
+目前沒有上架 App Store，要在 Mac 上用 Xcode 編譯後裝到手機（需要 Xcode 15 以上、iOS 17 以上）。
 
-```bash
-brew install xcodegen
-cd ios && xcodegen generate && open XiaoKeStock.xcodeproj
-```
+**需要準備**
+- Mac 一台，裝好 Xcode（App Store 下載），並用 Apple ID 登入：Xcode → Settings → Accounts → ＋。免費帳號就可以。
+- 安裝 xcodegen：`brew install xcodegen`
+- iPhone 用傳輸線接上 Mac，手機上按「信任這部電腦」。
+- 開啟 iPhone 的開發者模式：設定 → 隱私權與安全性 → 開發者模式 → 開啟（手機會重開機）。
 
-在 Xcode 選擇自己的 iPhone，按 ▶ 執行。如果用的是免費 Apple ID，**7 天後簽章就會過期**，到時要在 Mac 上重新按一次 ▶。換別的 Apple 帳號時，要修改 `ios/project.yml` 裡的 `DEVELOPMENT_TEAM`。
+**步驟**
+1. 下載程式並產生 Xcode 專案：
+   ```bash
+   git clone https://github.com/achir1015/xiaoke-stock.git
+   cd xiaoke-stock/ios
+   xcodegen generate
+   ```
+2. 不是用 achir1015 的帳號的話，要改成自己的帳號。打開 `ios/project.yml`：
+   - 把兩個 `DEVELOPMENT_TEAM` 換成自己的 Team ID（Xcode → Settings → Accounts 可以看到）。
+   - 把 `com.achir.xiaokestock` 換成自己的名字，例如 `com.yourname.xiaokestock`。
+   - App Group 也要一起改：`XiaoKeStock/XiaoKeStock.entitlements`、`Widget/Widget.entitlements`、`XiaoKeStock/Store.swift` 裡的 `group.com.achir.xiaokestock`。
+   - 改完再執行一次 `xcodegen generate`。
+3. 安裝。任選一種：
+   - **用 Xcode**：打開 `ios/XiaoKeStock.xcodeproj`，上方選你的 iPhone，按 ▶ 執行。
+   - **用指令**：
+     ```bash
+     xcodebuild -project XiaoKeStock.xcodeproj -scheme XiaoKeStock -destination 'generic/platform=iOS' -derivedDataPath /tmp/xks -allowProvisioningUpdates build
+     xcrun devicectl device install app --device <iPhone 的 UDID> /tmp/xks/Build/Products/Debug-iphoneos/XiaoKeStock.app
+     ```
+     iPhone 的 UDID 可以用 `xcrun devicectl list devices` 查。如果專案放在有 iCloud 同步的「文件」資料夾裡，`-derivedDataPath` 一定要指到 iCloud 以外的地方，不然簽名會失敗，錯誤是 `resource fork, Finder information, or similar detritus not allowed`。
+4. 第一次打開時如果出現「未受信任的開發者」：到 iPhone 的設定 → 一般 → VPN 與裝置管理 → 點你的 Apple ID → 信任。
+5. 第一次設到價提醒時，系統會問要不要讓 App 發通知，請按「允許」。
+6. 加桌面小工具：長按桌面空白處 → 左上角「＋」→ 搜尋「小柯股市」→ 選大小 → 加入。按 ⟳ 更新報價、按 ▶ 換群組、點個股會開啟個股頁。
+
+**注意**
+- 用免費 Apple ID 簽名的 App **7 天後會無法開啟**，重新執行一次步驟 3 就好。自選股和到價提醒都會保留。付費開發者帳號可以用一年。
 
 iPhone 版和 Android 版的差異：
 - 到價提醒：App 開著時每分鐘檢查；在背景時由 iOS 決定什麼時候檢查，不保證準時。
-- 檢查更新：iOS 不能自己安裝新版，有新版時只會開啟下載頁面。
+- 檢查更新：iOS 不能自己安裝新版，會比對 GitHub 上 `ios-v` 開頭的 Release，有新版時開啟 Release 頁面，再照上面步驟 3 重新安裝。
+- 桌面小工具：iOS 的自動更新時間由系統決定；按 ⟳ 可以立即更新。
 
 
 ## 功能

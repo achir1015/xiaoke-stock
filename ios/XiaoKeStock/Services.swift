@@ -75,6 +75,9 @@ enum AlertChecker {
         let day = today(), open = twOpen()
         let codes = alerts.filter { $0.on && $0.fired != day && (!Quotes.isTw($0.code) || open) }.map(\.code)
         if codes.isEmpty { return 0 }
+        // 還沒允許通知就先不檢查，免得標成「今天已提醒」卻沒有真的發出
+        let auth = await UNUserNotificationCenter.current().notificationSettings().authorizationStatus
+        if auth != .authorized && auth != .provisional { return 0 }
         let qs = await Quotes.fetch(codes)
         var fired: [String] = []
         for a in alerts where codes.contains(a.code) {
