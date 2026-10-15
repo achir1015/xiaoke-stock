@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/r_root" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal" android:gravity="center_vertical" android:paddingTop="4dp" android:paddingBottom="4dp">
+    <TextView android:id="@+id/r_name" android:layout_width="0dp" android:layout_weight="1.3"
+        android:layout_height="wrap_content" android:textColor="#E8ECF4" android:textSize="14sp" android:singleLine="true" />
+    <TextView android:id="@+id/r_code" android:layout_width="0dp" android:layout_weight="0.8"
+        android:layout_height="wrap_content" android:textColor="#8A93A8" android:textSize="11sp" android:singleLine="true" />
+    <TextView android:id="@+id/r_price" android:layout_width="0dp" android:layout_weight="1"
+        android:layout_height="wrap_content" android:gravity="end" android:textColor="#E8ECF4" android:textSize="14sp" android:textStyle="bold" />
+    <TextView android:id="@+id/r_pct" android:layout_width="0dp" android:layout_weight="1"
+        android:layout_height="wrap_content" android:gravity="end" android:textColor="#E8ECF4" android:textSize="13sp" />
+</LinearLayout>

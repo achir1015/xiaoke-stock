@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@drawable/widget_bg" android:padding="10dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical">
+        <TextView android:id="@+id/w_title" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:textColor="#FFB020" android:textSize="14sp"
+            android:textStyle="bold" android:singleLine="true" android:text="小柯股市" />
+        <TextView android:id="@+id/w_time" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="#8A93A8" android:textSize="11sp" />
+        <TextView android:id="@+id/w_next" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:paddingStart="12dp" android:paddingEnd="6dp" android:text="▶" android:textColor="#E8ECF4" android:textSize="16sp" />
+        <TextView android:id="@+id/w_refresh" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:paddingStart="6dp" android:text="⟳" android:textColor="#E8ECF4" android:textSize="18sp" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/w_list" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingTop="4dp" />
+</LinearLayout>

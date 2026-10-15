@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 小柯機器人臉（同 XiaoKe_App icon.svg）＋右上角 K 線；Android 7 以下用這張 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp" android:height="48dp" android:viewportWidth="512" android:viewportHeight="512">
+    <path android:fillColor="#101522" android:pathData="M112,0 h288 a112,112 0 0 1 112,112 v288 a112,112 0 0 1 -112,112 h-288 a112,112 0 0 1 -112,-112 v-288 a112,112 0 0 1 112,-112z" />
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="28" android:strokeLineCap="round" android:pathData="M120,250 a60,60 0 0 1 120,0" />
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="28" android:strokeLineCap="round" android:pathData="M272,250 a60,60 0 0 1 120,0" />
+    <path android:fillColor="#80FF6F91" android:pathData="M84,320 a44,22 0 1 0 88,0 a44,22 0 1 0 -88,0z" />
+    <path android:fillColor="#80FF6F91" android:pathData="M340,320 a44,22 0 1 0 88,0 a44,22 0 1 0 -88,0z" />
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="20" android:strokeLineCap="round" android:pathData="M206,330 q50,46 100,0" />
+    <path android:strokeColor="#22C55E" android:strokeWidth="6" android:pathData="M372,70 v76" />
+    <path android:fillColor="#22C55E" android:pathData="M362,92 h20 v36 h-20z" />
+    <path android:strokeColor="#FF4D4F" android:strokeWidth="6" android:pathData="M412,48 v84" />
+    <path android:fillColor="#FF4D4F" android:pathData="M402,62 h20 v52 h-20z" />
+    <path android:strokeColor="#FF4D4F" android:strokeWidth="6" android:pathData="M452,30 v70" />
+    <path android:fillColor="#FF4D4F" android:pathData="M442,40 h20 v44 h-20z" />
+    <path android:strokeColor="#FFB020" android:strokeWidth="10" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M352,150 L392,118 L428,128 L476,72" />
+</vector>
