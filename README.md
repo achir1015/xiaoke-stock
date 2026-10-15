@@ -4,6 +4,8 @@
 
 **[⬇️ 下載 XiaoKeStock.apk（v1.0.0）](https://github.com/achir1015/xiaoke-stock/raw/main/release/XiaoKeStock.apk)**
 
+也可以到 [Releases 頁面](https://github.com/achir1015/xiaoke-stock/releases/latest) 下載。
+
 <img src="release/qr.png" width="180" alt="手機掃描下載 APK">
 
 1. 用手機開上面的連結，或掃 QR Code 下載 APK。
