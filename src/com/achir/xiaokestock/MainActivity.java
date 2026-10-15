@@ -740,6 +740,7 @@ public class MainActivity extends Activity {
                 "漲跌顯示：" + (Store.showPct(this) ? "漲跌幅 %" : "漲跌點數"),
                 "到價提醒清單（" + Store.alerts(this).size() + "）",
                 "立即更新全市場資料",
+                "檢查更新（目前 v" + version() + "）",
                 "關於小柯股市助手",
         };
         new AlertDialog.Builder(this).setTitle("設定").setItems(items, new DialogInterface.OnClickListener() {
@@ -766,6 +767,8 @@ public class MainActivity extends Activity {
                             showTab(tab);
                         }
                     });
+                } else if (w == 4) {
+                    Updater.check(MainActivity.this);
                 } else {
                     new AlertDialog.Builder(MainActivity.this).setTitle("小柯股市助手 v" + version())
                             .setMessage("功能參考三竹股市（以 REA 分析其功能架構），程式全部重新撰寫，不使用三竹的伺服器、程式碼或素材。\n\n"

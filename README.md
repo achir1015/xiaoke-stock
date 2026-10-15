@@ -3,7 +3,7 @@
 
 ## 📲 下載安裝（Android 7.0 以上）
 
-**[⬇️ 下載 XiaoKeStock.apk（v1.0.0）](https://github.com/achir1015/xiaoke-stock/raw/main/release/XiaoKeStock.apk)**
+**[⬇️ 下載 XiaoKeStock.apk（v1.1.0）](https://github.com/achir1015/xiaoke-stock/raw/main/release/XiaoKeStock.apk)**
 
 也可以到 [Releases 頁面](https://github.com/achir1015/xiaoke-stock/releases/latest) 下載。
 
@@ -12,7 +12,7 @@
 1. 用手機開上面的連結，或掃 QR Code 下載 APK。
 2. 點開下載好的檔案。如果出現「為了安全起見，你的手機目前無法安裝來自這個來源的應用程式」，按「設定」→ 開啟「允許來自這個來源的應用程式」→ 返回再按「安裝」。
 3. 三星手機如果被 Play Protect 擋下，選「仍要安裝」。
-4. 有新版時直接安裝覆蓋就好，自選股和到價提醒都會保留。
+4. v1.1.0 起可以在 App 裡按「⚙ → 檢查更新」：有新版會自動下載並開啟安裝畫面。直接安裝覆蓋即可，自選股和到價提醒都會保留。
 
 Android 看盤 App，功能參考「三竹股市」。先用 REA 分析三竹 APK 的功能架構（見 [docs/REA_ANALYSIS.md](docs/REA_ANALYSIS.md)），程式再全部重新寫過；只用公開資料，不連三竹的伺服器，也沒有用到三竹的程式碼或素材。
 
